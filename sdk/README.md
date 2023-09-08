@@ -17,15 +17,15 @@ Console application that demonstrates each scenario the Partner Center SDK for .
 
 ## Getting Started
 
-Before you build the application, update the values in the *App.config* file to reflect the Azure AD authentication information you created in [Partner Center authentication](https://docs.microsoft.com/partner-center/develop/partner-center-authentication). Specifically, you should use your integration sandbox account settings during early development or for testing in production.
+Before you build the application, update the values in the `App.config` file to reflect the Azure AD authentication information you created in [Partner Center authentication](https://docs.microsoft.com/partner-center/develop/partner-center-authentication). Specifically, you should use your integration sandbox account settings during early development or for testing in production.
 
-Under **ScenarioSettings** in the *App.config* file, you can set parameters that will be automatically passed into the scenarios that you run.
+Under `ScenarioSettings` in the `App.config` file, you can set parameters that will be automatically passed into the scenarios that you run.
 
-To modify the list of scenarios that are run, comment out lines in **MainScenarios** or in an individual **Get Scenarios** method found in the *Program.cs* file.
+To modify the list of scenarios that are run, comment out lines in `MainScenarios` or in an individual **Get Scenarios** method found in the `Program.cs` file.
 
 ## Prerequisites
 
-With previous versions of this sample there were configurations for user credentials. Those configurations have been removed, and now you will be prompted to enter the credentials upon execution. This change was made due to the upcoming requirement to use multi-factor authentication (MFA) when access Partner Center and the Partner Center API using app + user authentication. Please note that the approach used by this application to obtain user credentials is just one way this operation can be performed. It is recommended that you review the [Secure App Model](../secure-app-model/README.md) sample for more information.
+With previous versions of this sample there were configurations for user credentials. Those configurations have been removed, and now you will be prompted to enter the credentials upon execution. This change was made due to the upcoming requirement to use multi-factor authentication (MFA) when accessing Partner Center and the Partner Center API using app + user authentication. Please note that the approach used by this application to obtain user credentials is just one way this operation can be performed. It is recommended that you review the [Secure App Model](../secure-app-model/README.md) sample for more information.
 
 ### Azure Active Directory
 
@@ -39,7 +39,7 @@ Perform the following task to correctly configure the Azure AD application for u
 6. Click _App registrations_ -> Select _All apps_ from the drop down -> Click on the application created in step 3.
 7. Click _Authentication_ from left menu blade and then click _Add Platform_
 8. In the Right popup blade, Click on _Mobile and Desktop Applications_
-8. Select **https://login.microsoftonline.com/common/oauth2/nativeclient** as one of the available Redirect URIs ( You need to add a custom redirectUri too. Add **http://localhost** but we will be using the one added earlier ).
+8. Select `https://login.microsoftonline.com/common/oauth2/nativeclient` as one of the available Redirect URIs (You need to add a custom `redirectUri` too. Add `http://localhost` but we will be using the one added earlier)
 9. Click _Configure_. Your set of redirect Uris will be added under Platform **Mobile and Desktop Applications**.
 10. Be sure to click the _Save_ button to ensure the changes are saved.  
 
@@ -49,9 +49,9 @@ Perform the following task to correctly configure the Azure AD application for u
 
 If you are connecting to one of the sovereign clouds you will need to modify the values below. These values should not be modified if you are connecting to the commercial cloud.
 
-- PartnerServiceApiEndpoint
-- AuthenticationAuthorityEndpoint
-- GraphEndpoint
+- `PartnerServiceApiEndpoint`
+- `AuthenticationAuthorityEndpoint`
+- `GraphEndpoint`
 
 All thees settings are necessary for the sample API calls to properly function.
 
@@ -59,7 +59,7 @@ All thees settings are necessary for the sample API calls to properly function.
 
 The following settings must be modified, so that each scenario functions as excepted
 
-- **ApplicationId**: Your Azure Active Directory application identifier, used for authentication
+- `ApplicationId`: Your Azure Active Directory application identifier, used for authentication
 - **ApplicationSecret**: The application secret, associated with the specified Azure AD application
 - **Domain**: The Azure Active Directory domain where the Azure AD application was created
 
